@@ -55,10 +55,10 @@
 #define ZMK_TAP_DANCE(name, ...) \
     ZMK_BEHAVIOR(name, tap_dance, __VA_ARGS__)
 
-#define ZMK_TD_LAYER(name, layer, rgb) \
+#define ZMK_TD_LAYER(name, layer) \
     ZMK_TAP_DANCE(name, \
         tapping-term-ms = <200>; \
-        bindings = <&mo layer>, <&to layer>, <&rgb>; \
+        bindings = <&mo layer>, <&to layer>; \
 )
 
 
@@ -229,7 +229,7 @@
 /* System behavior and macros */
 / {
     behaviors {
-        ZMK_TD_LAYER(lower, LAYER_Lower, layer_rgb_base)
+        ZMK_TD_LAYER(lower, LAYER_Lower)
 
         layer_rgb_base: layer_rgb_base {
             compatible = "zmk,behavior-macro";
@@ -404,8 +404,8 @@
     behaviors {
 
         // Layer tap dance behaviors
-        ZMK_TD_LAYER(td_LAYER_Base, 0, layer_rgb_base)
-        ZMK_TD_LAYER(td_LAYER_Keypad, 1, layer_rgb_keypad)
+        ZMK_TD_LAYER(td_LAYER_Base, 0)
+        ZMK_TD_LAYER(td_LAYER_Keypad, 1)
 
     };
 };
