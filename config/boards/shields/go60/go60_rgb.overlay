@@ -1,35 +1,8 @@
-#include <dt-bindings/zmk/rgb.h>
+#include "go60_rgb_layers.dtsi"
 
-/ {
+ / {
     chosen {
         zmk,underglow = &rgb_underglow;
-    };
-
-    rgb_underglow: rgb_underglow {
-        compatible = "zmk,underglow";
-        status = "okay";
-
-        chain-length = <60>;
-        brightness = <100>;
-        current-brightness = <100>;
-
-        default-effect = <RGB_EFF_SOLID>;
-        speed = <2>;
-    };
-
-    layer_underglow {
-        compatible = "zmk,layer-underglow";
-
-        layer-0 {
-            color = <94 234 242>;   // amarillo
-        };
-
-        layer-1 {
-            color = <94 242 166>;     // azul
-        };
-
-        layer-2 {
-            color = <244 180 94>;     // verde
-        };
+        zmk,layer-underglow = &layer_ug;
     };
 };
