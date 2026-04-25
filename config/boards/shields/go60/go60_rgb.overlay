@@ -1,4 +1,22 @@
+#include <dt-bindings/zmk/rgb.h>
+
 / {
+    chosen {
+        zmk,underglow = &rgb_underglow;
+    };
+
+    rgb_underglow: rgb_underglow {
+        compatible = "zmk,underglow";
+        status = "okay";
+
+        chain-length = <60>;
+        brightness = <100>;
+        current-brightness = <100>;
+
+        default-effect = <RGB_EFF_SOLID>;
+        speed = <2>;
+    };
+
     layer_underglow {
         compatible = "zmk,layer-underglow";
 
