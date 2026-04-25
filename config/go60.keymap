@@ -229,7 +229,7 @@
 /* System behavior and macros */
 / {
     behaviors {
-        ZMK_TD_LAYER(lower, LAYER_Lower)
+        ZMK_TD_LAYER(lower, LAYER_Lower, layer_rgb_base)
 
         layer_rgb_base: layer_rgb_base {
             compatible = "zmk,behavior-macro";
