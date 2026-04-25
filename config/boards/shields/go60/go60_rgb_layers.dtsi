@@ -2,60 +2,56 @@
 
 / {
     behaviors {
+
         /* =========================
-         * BASE (CAPA 0)
+         * CAPA BASE
          * ========================= */
         rgb_layer_base: rgb_layer_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
             bindings =
-                /* Amarillo suave */
-                <&rgb_ug RGB_HUI>,
-                <&rgb_ug RGB_SAI>,
+                <&rgb_ug RGB_HUI>,   /* amarillo */
                 <&rgb_ug RGB_BRI>;
         };
 
         /* =========================
-         * KEYPAD (CAPA 1)
+         * KEYPAD
          * ========================= */
         rgb_layer_keypad: rgb_layer_keypad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
             bindings =
-                /* Azul */
-                <&rgb_ug RGB_HUD>,
-                <&rgb_ug RGB_SAD>,
-                <&rgb_ug RGB_SPI>;
+                <&rgb_ug RGB_HUD>,   /* azul */
+                <&rgb_ug RGB_SAD>;
         };
 
         /* =========================
-         * SYMBOL NAV (CAPA 2)
+         * SYMBOL NAV
          * ========================= */
         rgb_layer_symbol: rgb_layer_symbol {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
             bindings =
-                /* Verde */
-                <&rgb_ug RGB_SAI>,
-                <&rgb_ug RGB_HUI>,
+                <&rgb_ug RGB_SAI>,   /* verde */
                 <&rgb_ug RGB_BRI>;
         };
+    };
 
-        /* =========================
-         * MAGIC (CAPA 3)
-         * ========================= */
-        rgb_layer_magic: rgb_layer_magic {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+    /* =========================
+     * LINK LAYER STATE → RGB
+     * ========================= */
+    behaviors {
+        layer_rgb_router: layer_rgb_router {
+            compatible = "zmk,behavior-layer-state";
+            #binding-cells = <1>;
 
             bindings =
-                /* Rojo */
-                <&rgb_ug RGB_HUD>,
-                <&rgb_ug RGB_SAI>,
-                <&rgb_ug RGB_BRD>;
+                <&rgb_layer_base>,
+                <&rgb_layer_keypad>,
+                <&rgb_layer_symbol>;
         };
     };
 };
