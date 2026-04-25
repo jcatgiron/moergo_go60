@@ -1,0 +1,30 @@
+#include <dt-bindings/zmk/rgb.h>
+
+/ {
+    chosen {
+        zmk,underglow = &rgb_underglow;
+    };
+
+    rgb_underglow: rgb_underglow {
+        compatible = "zmk,underglow";
+        status = "okay";
+
+        // ⚠️ ajusta si tu GO60 tiene más/menos LEDs
+        chain-length = <60>;
+
+        // corriente segura (evita sobrecalentamiento)
+        current-brightness = <150>;
+
+        // brillo inicial
+        brightness = <120>;
+
+        // efecto inicial
+        default-effect = <RGB_EFF_BREATHE>;
+
+        // velocidad inicial
+        speed = <2>;
+
+        // colores base iniciales (puedes cambiar luego por capa)
+        color = <255 255 255>;
+    };
+};
