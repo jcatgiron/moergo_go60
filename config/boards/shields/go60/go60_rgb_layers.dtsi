@@ -1,57 +1,22 @@
-#include <dt-bindings/zmk/rgb.h>
-
 / {
-    behaviors {
+    layer_ug: layer_ug {
+        compatible = "zmk,layer-underglow";
 
-        /* =========================
-         * CAPA BASE
-         * ========================= */
-        rgb_layer_base: rgb_layer_base {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-
-            bindings =
-                <&rgb_ug RGB_HUI>,   /* amarillo */
-                <&rgb_ug RGB_BRI>;
+        base {
+            layer = <0>;
+            color = <94 234 242>;   // amarillo
         };
 
-        /* =========================
-         * KEYPAD
-         * ========================= */
-        rgb_layer_keypad: rgb_layer_keypad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-
-            bindings =
-                <&rgb_ug RGB_HUD>,   /* azul */
-                <&rgb_ug RGB_SAD>;
+        keypad {
+            layer = <1>;
+            color = <94 242 166>;     // verde
         };
 
-        /* =========================
-         * SYMBOL NAV
-         * ========================= */
-        rgb_layer_symbol: rgb_layer_symbol {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-
-            bindings =
-                <&rgb_ug RGB_SAI>,   /* verde */
-                <&rgb_ug RGB_BRI>;
+        symbol {
+            layer = <2>;
+            color = <244 180 94>;;     // azul
         };
-    };
 
-    /* =========================
-     * LINK LAYER STATE → RGB
-     * ========================= */
-    behaviors {
-        layer_rgb_router: layer_rgb_router {
-            compatible = "zmk,behavior-layer-state";
-            #binding-cells = <1>;
-
-            bindings =
-                <&rgb_layer_base>,
-                <&rgb_layer_keypad>,
-                <&rgb_layer_symbol>;
-        };
+        // NO incluyes Magic → queda como está
     };
 };
