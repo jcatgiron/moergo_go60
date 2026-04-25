@@ -9,22 +9,11 @@
         compatible = "zmk,underglow";
         status = "okay";
 
-        // ⚠️ ajusta si tu GO60 tiene más/menos LEDs
         chain-length = <60>;
-
-        // corriente segura (evita sobrecalentamiento)
+        brightness = <120>;
         current-brightness = <150>;
 
-        // brillo inicial
-        brightness = <120>;
-
-        // efecto inicial
-        default-effect = <RGB_EFF_BREATHE>;
-
-        // velocidad inicial
+        default-effect = <RGB_EFF_SOLID>;
         speed = <2>;
-
-        // colores base iniciales (puedes cambiar luego por capa)
-        color = <255 255 255>;
     };
 };
