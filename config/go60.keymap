@@ -230,30 +230,6 @@
 / {
     behaviors {
         ZMK_TD_LAYER(lower, LAYER_Lower)
-
-        layer_rgb_base: layer_rgb_base {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &rgb_ug RGB_HUI>;
-        };
-
-        layer_rgb_keypad: layer_rgb_keypad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &rgb_ug RGB_SPI>;
-        };
-
-        layer_rgb_symbol: layer_rgb_symbol {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &rgb_ug RGB_SAI>;
-        };
-
-        layer_rgb_magic: layer_rgb_magic {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &rgb_ug RGB_EFF>;
-        };
     };
 };
 
